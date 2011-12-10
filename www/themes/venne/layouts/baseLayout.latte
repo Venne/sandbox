@@ -1,0 +1,84 @@
+{**
+ * Venne:CMS layout template.
+ *
+ * @copyright  Copyright (c) 2011 Josef Kříž 
+ *
+ * @param string   $basePath	web base path
+ * @param array    $flashes		flash messages
+ * 
+ * @param $venneModeAdmin
+ * @param $venneModeInstallation
+ * @param $venneModeFront
+ *
+ * @param $lang
+ * @param $langName
+ * @param $langAlias
+ *}
+
+{extends "./../../@html5.latte"}
+
+{block #body}
+
+{css /themes/venne/css/style.css}
+{css /themes/venne/css/content.css}
+{css /themes/venne/css/flash.css}
+
+<div id="all-1">
+	<div class="center-block">
+
+		<div id="header-1-logo">
+			<a href="{$basePath}/">
+			{*element image logo*}
+			</a>
+		</div>
+
+		{if $presenter->context->modules->hasService("navigation")}
+		<div id="header-2-menu">
+			<div class="left"></div>
+			<div class="center">
+			{element navigation:main}
+			</div>
+			<div class="right"></div>
+		</div>
+		{/if}
+
+		<div id="header-3-left">
+			{if isset($url)}
+				{var $p = str_replace('/','eee',str_replace('-','ooo',$url))}
+				{*element textarea "head".$p*}
+			{/if}
+		</div>
+
+		{*}<div id="header-4-right">
+
+		</div>
+		{*}
+
+	</div>
+</div>
+
+<div id="all-2">
+	<div class="center-block">
+		<div id="path">
+			{if $presenter->context->modules->hasService("navigation")}{element navigation:path}{/if}
+		</div>
+		<div id="content" class="module-{*$website->module|lower*}">
+			{include #layout}
+		</div>
+
+	</div>
+</div>
+
+<div id="all-3">
+	<div class="center-block">
+
+		{if $presenter->context->modules->hasService("navigation")}{element navigation:main}{/if}
+
+		<div id="footer-leaf">
+			<p><span><a href="{link element_panel-login!}">Administrace</a></span><span><a href="#">Mapa webu</a></span></p>
+			<p>Copyright &copy;<a href="#">Venne:STUDIO</a></p>
+		</div>
+
+	</div>
+</div>
+{/block}

@@ -1,0 +1,67 @@
+{**
+ * Venne:CMS layout template.
+ *
+ * @copyright  Copyright (c) 2011 Josef Kříž 
+ *
+ * @param string   $basePath	web base path
+ * @param array    $flashes		flash messages
+ *}
+
+{extends "./../../@html5.latte"}
+
+{block #body}
+
+{js /themes/admin/js/admin.js}
+{css /themes/admin/css/style.css}
+
+	<div id="page">
+		<div id="top">
+			{if !$venneModeInstallation}<a href="{link :Core:Admin:Default:}">{/if}
+				<div id="logo"></div>
+			{if !$venneModeInstallation}</a>{/if}
+			<div id="menu">
+				{if !isset($hideMenuItems) && $presenter->context->doctrineContainer->checkConnection() && !$presenter->context->modules->checkModuleUpgrades()}
+				<ul>
+					<li><a href="{plink :Website:Admin:Default:}" {if $presenter->isLinkCurrent(":Website:Admin:*")}class="active"{/if}>Správa webu</a></li>
+					<li><a href="{plink :Modules:Admin:Default:}" {if $presenter->isLinkCurrent(":Modules:Admin:*")}class="active"{/if}>Správa modulů</a></li>
+					<li><a href="{plink :Security:Admin:Default:}" {if $presenter->isLinkCurrent(":Security:Admin:*")}class="active"{/if}>Security settings</a></li>
+					<li><a href="{plink :System:Admin:Default:}" {if $presenter->isLinkCurrent(":System:Admin:*")}class="active"{/if}>Správa systému</a></li>
+				</ul>
+				{/if}
+			</div>
+		</div>
+		<div id="middle">
+			<div id="middle-left">
+				<div id="submenu">
+					{if !isset($hideMenuItems) && $presenter->context->doctrineContainer->checkConnection() && !$presenter->context->modules->checkModuleUpgrades()}
+						<h3>{_"Modules settings"}</h3>
+						<ul>
+						{foreach $adminMenu as $item}
+							{dump $item->mask}
+							<li {if $presenter->isLinkCurrent($item->mask)}class="active" {/if}><a href="{$presenter->link($item->link)}">{$item->name}</a>
+								{if count($item->childrens) > 0}
+								<ul>
+								{foreach $item->childrens as $item2}
+									<li {if $presenter->isLinkCurrent($item2->mask)}class="active" {/if}><a href="{$presenter->link($item2->link)}">{$item2->name}</a></li>
+								{/foreach}
+								</ul>
+								{/if}
+							</li>
+						{/foreach}
+						<ul>
+					{/if}
+				</div>
+			</div>
+			<div id="content" class="module-">
+				{if $presenter->context->modules->hasService("navigation")}
+				{if !isset($hideMenuItems)}{element navigation:path}{/if}
+				{/if}
+				{foreach $flashes as $flash}<div class="flash {$flash->type}">{$flash->message}</div>{/foreach}
+				{include #content}
+			</div>
+		</div>
+		<div id="bottom">
+			<span>Copyright © 2011 Josef Kříž</span> | <span>version {$venneVersionId} {$venneVersionState}</span>{if !$venneModeInstallation} | <span><a href="{link :Core:Admin:About:}">about Venne:CMS</a></span>{/if}
+		</div>
+	</div>
+{/block}

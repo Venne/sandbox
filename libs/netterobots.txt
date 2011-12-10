@@ -1,0 +1,2 @@
+Disallow: /Doctrine/vendor/doctrine-dbal/tests
+Disallow: /Doctrine/vendor/doctrine-common/tests

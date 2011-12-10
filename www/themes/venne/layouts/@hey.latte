@@ -1,0 +1,30 @@
+{**
+ * Venne:CMS layout template.
+ *
+ * @copyright  Copyright (c) 2011 Josef Kříž 
+ *
+ * @param string   $basePath	web base path
+ * @param array    $flashes		flash messages
+ * 
+ * @param $venneModeAdmin
+ * @param $venneModeInstallation
+ * @param $venneModeFront
+ *
+ * @param $lang
+ * @param $langName
+ * @param $langAlias
+ *}
+
+{extends "baseLayout.latte"}
+
+{block #layout}
+			<div class="content-left">
+				{foreach $flashes as $flash}<div class="flash {$flash->type}">{$flash->message}</div>{/foreach}
+				{*element area "content_top"*}
+				{include #content}
+				{element extensions}
+				{*element area "content_bottom"*}
+			</div>
+			<div class="content-right">
+				{element editor}
+			</div>

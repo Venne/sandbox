@@ -1,0 +1,47 @@
+{**
+ * Venne:CMS layout template.
+ *
+ * @copyright  Copyright (c) 2011 Josef Kříž 
+ *
+ * @param string   $basePath	web base path
+ * @param array    $flashes		flash messages
+ * 
+ * @param $venneModeAdmin
+ * @param $venneModeInstallation
+ * @param $venneModeFront
+ *
+ * @param $lang
+ * @param $langName
+ * @param $langAlias
+ *}
+{js /js/jquery-1.6.4.min.js}
+{js /js/jquery-ui-1.8.16.custom.min.js}
+{js /js/jquery.nette.js}
+{js /js/netteForms.js}
+{js /js/jquery.ajaxform.js}
+{js /js/venne.js}
+{css /css/jquery-ui-1.8.16.custom.css}
+{capture $body}
+{if !isset($installationMode)}{element panel}{/if}
+{include #body}
+{/capture}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="{$presenter->description}" n:if="$presenter->description">
+	<meta name="keywords" content="{$presenter->keywords}" n:if="$presenter->keywords">
+	<meta name="author" content="{$presenter->author}" n:if="$presenter->author">
+	<meta name="robots" content="{$presenter->robots}" n:if="$presenter->robots">
+
+	<link n:foreach="$presenter->css  as $css" rel="stylesheet" media="screen,projection,tv" href="{$basePath}{$css}" type="text/css">
+	<link rel="shortcut icon" href="{$basePath}/templates/{$presenter->context->params["website"]["theme"]}/favicon.ico" type="image/x-icon">
+
+	<script n:foreach="$presenter->js as $js" type="text/javascript" src="{$basePath}{$js}"></script>
+	
+	<title>{str_replace("%s", !$presenter->title ? "" : $presenter->titleSeparator, str_replace("%t", $presenter->title, $presenter->titleTemplate))}</title>
+</head>
+<body{if $basePath} data-venne-basepath="{$basePath}"{/if}>
+{!$body}
+</body>
+</html>

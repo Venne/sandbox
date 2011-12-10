@@ -1,0 +1,61 @@
+default:
+	debugger:
+		mode: development
+		developerIp: ""
+		strict: "yes"
+		logDir: %rootDir%/log
+		logEmail: null
+
+	php:
+		date.timezone: Europe/Prague
+		
+	services:
+		robotLoader:
+			run: true
+			
+	database:
+		driver: pdo_mysql
+		host: ""
+		dbname: ""
+		user: ""
+		password: ""
+		charset: utf8
+		driverOptions:
+			1002: SET NAMES utf8
+			
+		proxyDir: %appDir%/proxy
+		proxyNamespace: proxy
+		
+	smtp:
+		host: smtp.gmail.com
+		username: username
+		password: pass
+		secure: ssl
+
+	venneDir: %libsDir%/Venne
+	themesDir: %wwwDir%/themes
+	flagsDir: %rootDir%/flags
+	dataDir: %rootDir%/data
+		
+	website:
+		theme: venne
+		defaultPresenter: Homepage
+		errorPresenter: Error
+		routePrefix: ""
+		title: ""
+		titleSeparator: "|"
+		keywords: ""
+		description: ""
+		author: ""
+		multilang: false
+		defaultLangAlias: en
+
+	admin:
+		name: ""
+		password: ""
+
+	modules:
+		core:
+			run: true
+			version: "2.0"
+
