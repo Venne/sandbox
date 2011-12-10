@@ -22,9 +22,9 @@
 				{foreach $flashes as $flash}<div class="flash {$flash->type}">{$flash->message}</div>{/foreach}
 				{*element area "content_top"*}
 				{include #content}
-				{element extensions}
+				{control extensions}
 				{*element area "content_bottom"*}
 			</div>
 			<div class="content-right">
-				{element editor}
+				{control editor}
 			</div>

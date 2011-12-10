@@ -20,7 +20,7 @@
 				<div id="logo"></div>
 			{if !$venneModeInstallation}</a>{/if}
 			<div id="menu">
-				{if !isset($hideMenuItems) && $presenter->context->doctrineContainer->checkConnection() && !$presenter->context->modules->checkModuleUpgrades()}
+				{if !isset($hideMenuItems) && $presenter->context->doctrineContainer->checkConnection() && !$presenter->context->moduleManager->checkModuleUpgrades()}
 				<ul>
 					<li><a href="{plink :Website:Admin:Default:}" {if $presenter->isLinkCurrent(":Website:Admin:*")}class="active"{/if}>Správa webu</a></li>
 					<li><a href="{plink :Modules:Admin:Default:}" {if $presenter->isLinkCurrent(":Modules:Admin:*")}class="active"{/if}>Správa modulů</a></li>
@@ -33,7 +33,7 @@
 		<div id="middle">
 			<div id="middle-left">
 				<div id="submenu">
-					{if !isset($hideMenuItems) && $presenter->context->doctrineContainer->checkConnection() && !$presenter->context->modules->checkModuleUpgrades()}
+					{if !isset($hideMenuItems) && $presenter->context->doctrineContainer->checkConnection() && !$presenter->context->moduleManager->checkModuleUpgrades()}
 						<h3>{_"Modules settings"}</h3>
 						<ul>
 						{foreach $adminMenu as $item}
@@ -53,8 +53,8 @@
 				</div>
 			</div>
 			<div id="content" class="module-">
-				{if $presenter->context->modules->hasService("navigation")}
-				{if !isset($hideMenuItems)}{element navigation:path}{/if}
+				{if $presenter->context->hasService("navigationModule")}
+				{if !isset($hideMenuItems)}{control navigation:path}{/if}
 				{/if}
 				{foreach $flashes as $flash}<div class="flash {$flash->type}">{$flash->message}</div>{/foreach}
 				{include #content}

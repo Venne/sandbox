@@ -22,12 +22,13 @@
 {js /js/venne.js}
 {css /css/jquery-ui-1.8.16.custom.css}
 {capture $body}
-{if !isset($installationMode)}{element panel}{/if}
+{if !isset($installationMode)}{control panel}{/if}
 {include #body}
 {/capture}
 <!DOCTYPE html>
 <html>
 <head>
+	{$presenter->context->eventManager->dispatchEvent(\App\CoreModule\RenderEvents::onHeadStart)}
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="description" content="{$presenter->description}" n:if="$presenter->description">
 	<meta name="keywords" content="{$presenter->keywords}" n:if="$presenter->keywords">
@@ -35,13 +36,18 @@
 	<meta name="robots" content="{$presenter->robots}" n:if="$presenter->robots">
 
 	<link n:foreach="$presenter->css  as $css" rel="stylesheet" media="screen,projection,tv" href="{$basePath}{$css}" type="text/css">
-	<link rel="shortcut icon" href="{$basePath}/templates/{$presenter->context->params["website"]["theme"]}/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{$basePath}/templates/{$presenter->context->parameters["website"]["theme"]}/favicon.ico" type="image/x-icon">
 
 	<script n:foreach="$presenter->js as $js" type="text/javascript" src="{$basePath}{$js}"></script>
 	
 	<title>{str_replace("%s", !$presenter->title ? "" : $presenter->titleSeparator, str_replace("%t", $presenter->title, $presenter->titleTemplate))}</title>
+	{$presenter->context->eventManager->dispatchEvent(\App\CoreModule\RenderEvents::onHeadEnd)}
 </head>
 <body{if $basePath} data-venne-basepath="{$basePath}"{/if}>
+{$presenter->context->eventManager->dispatchEvent(\App\CoreModule\RenderEvents::onBodyStart)}
 {!$body}
+{$presenter->context->eventManager->dispatchEvent(\App\CoreModule\RenderEvents::onBodyEnd)}
 </body>
+{$presenter->context->eventManager->dispatchEvent(\App\CoreModule\RenderEvents::onHtmlEnd)}
 </html>
+{$presenter->context->eventManager->dispatchEvent(\App\CoreModule\RenderEvents::onDocumentEnd)}

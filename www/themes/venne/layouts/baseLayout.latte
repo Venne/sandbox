@@ -32,11 +32,11 @@
 			</a>
 		</div>
 
-		{if $presenter->context->modules->hasService("navigation")}
+		{if $presenter->context->hasService("navigationModule")}
 		<div id="header-2-menu">
 			<div class="left"></div>
 			<div class="center">
-			{element navigation:main}
+			{control navigation:main}
 			</div>
 			<div class="right"></div>
 		</div>
@@ -60,7 +60,7 @@
 <div id="all-2">
 	<div class="center-block">
 		<div id="path">
-			{if $presenter->context->modules->hasService("navigation")}{element navigation:path}{/if}
+			{if $presenter->context->hasService("navigationModule")}{control navigation:path}{/if}
 		</div>
 		<div id="content" class="module-{*$website->module|lower*}">
 			{include #layout}
@@ -72,7 +72,7 @@
 <div id="all-3">
 	<div class="center-block">
 
-		{if $presenter->context->modules->hasService("navigation")}{element navigation:main}{/if}
+		{if $presenter->context->hasService("navigationModule")}{control navigation:main}{/if}
 
 		<div id="footer-leaf">
 			<p><span><a href="{link element_panel-login!}">Administrace</a></span><span><a href="#">Mapa webu</a></span></p>

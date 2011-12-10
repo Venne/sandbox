@@ -4,18 +4,12 @@
  * Venne:CMS bootstrap file.
  */
 
-use Nette\Application\Routers\Route;
+$parameters['rootDir'] = realpath(__DIR__ . '/..');
+$parameters['tempDir'] = $parameters['rootDir'] . '/temp';
+$parameters['libsDir'] = $parameters['rootDir'] . '/libs';
+$parameters['venneDir'] = $parameters['libsDir'] . '/Venne';
+$parameters['appDir'] = $parameters['rootDir'] . '/app';
+$parameters['wwwDir'] = $parameters['rootDir'] . '/www';
+$parameters['configDir'] = $parameters['appDir'] . '/config';
 
-// Load Nette Framework and Venne:CMS
-$params['rootDir'] = __DIR__ . '/..';
-$params['tempDir'] = $params['rootDir'] . '/temp';
-$params['libsDir'] = $params['rootDir'] . '/libs';
-$params['venneDir'] = $params['libsDir'] . '/Venne';
-require $params['venneDir'] . '/loader.php';
-
-// Setup router
-$router = $container->router;
-$router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
-
-// Configure and run the application!
-$application->run();
+require __DIR__ . '/../libs/Venne/loader.php';
