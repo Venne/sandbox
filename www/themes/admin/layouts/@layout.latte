@@ -22,10 +22,10 @@
 			<div id="menu">
 				{if !isset($hideMenuItems) && $presenter->context->doctrineContainer->checkConnection() && !$presenter->context->moduleManager->checkModuleUpgrades()}
 				<ul>
-					<li><a href="{plink :Website:Admin:Default:}" {if $presenter->isLinkCurrent(":Website:Admin:*")}class="active"{/if}>Správa webu</a></li>
-					<li><a href="{plink :Modules:Admin:Default:}" {if $presenter->isLinkCurrent(":Modules:Admin:*")}class="active"{/if}>Správa modulů</a></li>
-					<li><a href="{plink :Security:Admin:Default:}" {if $presenter->isLinkCurrent(":Security:Admin:*")}class="active"{/if}>Security settings</a></li>
-					<li><a href="{plink :System:Admin:Default:}" {if $presenter->isLinkCurrent(":System:Admin:*")}class="active"{/if}>Správa systému</a></li>
+					<li><a class="{if $presenter->isLinkCurrent(":Website:Admin:*")}active{/if}" href="{plink :Website:Admin:Default:}">Správa webu</a></li>
+					<li><a class="{if $presenter->isLinkCurrent(":Modules:Admin:*")}active{/if}" href="{plink :Modules:Admin:Default:}">Správa modulů</a></li>
+					<li><a class="{if $presenter->isLinkCurrent(":Security:Admin:*")}active{/if}" href="{plink :Security:Admin:Default:}">Security settings</a></li>
+					<li><a class="{if $presenter->isLinkCurrent(":System:Admin:*")}active{/if}" href="{plink :System:Admin:Default:}">Správa systému</a></li>
 				</ul>
 				{/if}
 			</div>
@@ -38,11 +38,11 @@
 						<ul>
 						{foreach $adminMenu as $item}
 							{dump $item->mask}
-							<li {if $presenter->isLinkCurrent($item->mask)}class="active" {/if}><a href="{$presenter->link($item->link)}">{$item->name}</a>
+							<li class="{if $presenter->isLinkCurrent($item->mask)}active{/if}"><a href="{$presenter->link($item->link)}">{$item->name}</a>
 								{if count($item->childrens) > 0}
 								<ul>
 								{foreach $item->childrens as $item2}
-									<li {if $presenter->isLinkCurrent($item2->mask)}class="active" {/if}><a href="{$presenter->link($item2->link)}">{$item2->name}</a></li>
+									<li class="{if $presenter->isLinkCurrent($item2->mask)}active{/if}"><a href="{$presenter->link($item2->link)}">{$item2->name}</a></li>
 								{/foreach}
 								</ul>
 								{/if}
