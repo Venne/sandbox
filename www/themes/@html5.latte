@@ -36,7 +36,7 @@
 	<meta name="robots" content="{$presenter->robots}" n:if="$presenter->robots">
 
 	<link n:foreach="$presenter->css  as $css" rel="stylesheet" media="screen,projection,tv" href="{$basePath}{$css}" type="text/css">
-	<link rel="shortcut icon" href="{$basePath}/templates/{$presenter->context->parameters["website"]["theme"]}/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{$basePath}/themes/{$presenter->context->parameters["website"]["theme"]}/favicon.ico" type="image/x-icon">
 
 	<script n:foreach="$presenter->js as $js" type="text/javascript" src="{$basePath}{$js}"></script>
 	
