@@ -18,6 +18,7 @@ parameters:
 		developerIp: ""
 		logDir: %rootDir%/log
 		logEmail: null
+		emailSnooze: 172800
 		
 	database:
 		driver: pdo_mysql
