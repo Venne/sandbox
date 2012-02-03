@@ -37,24 +37,52 @@ parameters:
 	themesDir: %wwwDir%/themes
 	flagsDir: %rootDir%/flags
 	dataDir: %rootDir%/data
+
+	administration:
+		login:
+			name: ""
+			password: ""
+		routePrefix: "admin"
+
 	website:
-		theme: venne
 		title: ""
 		titleSeparator: |
 		keywords: ""
 		description: ""
 		author: ""
 		routePrefix: ""
-		multilang: false
-		defaultLangAlias: en
+		languages: []
+		defaultLanguage: ""
 		defaultPresenter: Homepage
 		errorPresenter: Error
-		
-	admin:
-		name: ""
-		password: ""
-		
 	
 php:
 	date.timezone: Europe/Prague
+
+nette:
+	session:
+		expiration: + 1 year
+		autoStart: false
+		
+	application:
+		debugger: true
+		
+	routing:
+		debugger: true
+		
+	container:
+		debugger: true
+		
+	security:
+		debugger: true
+		
+	xhtml: "1"
+	
+venne:
+	stopwatch:
+		debugger: true
+		
+	
+doctrine:
+	debugger: true
 	

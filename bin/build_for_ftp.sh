@@ -15,7 +15,7 @@ mkdir "$TARGET_DIR"
 
 echo 
 echo "Copying files";
-cp -RPds "$DIR/www" "$TARGET_DIR/"
+cp -R "$DIR/www" "$TARGET_DIR/"
 cp -R "$DIR/libs" "$TARGET_DIR/"
 cp -R "$DIR/app" "$TARGET_DIR/"
 cp -R "$DIR/temp" "$TARGET_DIR/"
