@@ -38,7 +38,7 @@ install_git()
 }
 
 # Nette Framework
-install_git nette git://github.com/nette/nette.git ba290acb434c787b775d5637e95237dd4f77d877
+install_git nette git://github.com/nette/nette.git v2.0
 ln -s "../$VENDORS/nette/Nette" "$LIBS_DIR/Nette"
 
 
@@ -48,7 +48,7 @@ ln -s "../$VENDORS/venne/Venne" "$LIBS_DIR/Venne"
 ln -s "../$VENDORS/venne/App" "$LIBS_DIR/App"
 
 # Doctrine
-install_git doctrine git://github.com/doctrine/doctrine2.git 2.1.5
+install_git doctrine git://github.com/doctrine/doctrine2.git 2.2.0
 cd "$VENDORS_DIR/doctrine"
 git submodule init
 git submodule update
