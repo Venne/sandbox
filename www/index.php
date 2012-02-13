@@ -4,6 +4,11 @@
 // require '.maintenance.php';
 
 // load Venne:CMS
+require_once __DIR__ . '/../libs/Nette/loader.php';
 require_once __DIR__ . '/../libs/Venne/loader.php';
-$venne = new \Venne\Loader(__DIR__ . "/../");
-$venne->run();
+
+$configurator = new \Venne\Config\Configurator();
+$configurator->enableDebugger();
+$configurator->enableLoader();
+$container = $configurator->getContainer();
+$container->application->run();
