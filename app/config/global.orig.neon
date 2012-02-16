@@ -81,8 +81,7 @@ nette:
 venne:
 	stopwatch:
 		debugger: true
-	requestsPanel:
-		debugger: false
+
 	
 doctrine:
 	debugger: true
