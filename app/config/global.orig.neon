@@ -21,7 +21,7 @@ parameters:
 		emailSnooze: 172800
 		
 	database:
-		driver: pdo_mysql
+		driver: ""
 		host: ""
 		user: ""
 		password: ""
