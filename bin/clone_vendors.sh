@@ -5,6 +5,7 @@ VENDORS="libs-all"
 VENDORS_DIR="$DIR/$VENDORS"
 LIBS_DIR="$DIR/libs"
 WWW_DIR="$DIR/www"
+APP="$DIR/app"
 
 mkdir $VENDORS_DIR
 cd $VENDORS_DIR
@@ -55,9 +56,12 @@ git submodule update
 cd $VENDORS_DIR
 ln -s "../$VENDORS/doctrine/lib" "$LIBS_DIR/Doctrine"
 
-# elRTE
-# install_git elrte git://github.com/Studio-42/elRTE.git stable
-# install_git elfinder git://github.com/Studio-42/elFinder.git 2.x
-# ln -s "../$VENDORS/elrte" "$WWW_DIR/elRTE"
-# ln -s "../$VENDORS/elfinder" "$WWW_DIR/elFinder"
+# Modules
+cd $APP
+install_git CoreModule git://github.com/Venne/CoreModule.git
+install_git PagesModule git://github.com/Venne/PagesModule.git
+install_git NavigationModule git://github.com/Venne/NavigationModule.git
+
+
+
 
