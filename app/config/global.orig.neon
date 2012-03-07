@@ -71,10 +71,10 @@ nette:
 		debugger: true
 		
 	container:
-		debugger: true
+		debugger: false
 		
 	security:
-		debugger: true
+		debugger: false
 		
 	xhtml: "1"
 	
@@ -84,5 +84,5 @@ venne:
 
 	
 doctrine:
-	debugger: true
+	debugger: false
 	
