@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+
+function permissions($dir)
+{
+	umask(0000);
+	if (!is_dir($dir)) {
+		@mkdir($dir, 0777, TRUE);
+
+	} else {
+		@chmod($dir, 0777);
+	}
+}
+
+permissions(__DIR__ . '/flags');
+permissions(__DIR__ . '/log');
+permissions(__DIR__ . '/temp');
+permissions(__DIR__ . '/data');
+permissions(__DIR__ . '/www/public');
+permissions(__DIR__ . '/www/cache');
+permissions(__DIR__ . '/www/resources');
+permissions(__DIR__ . '/app/config');
+permissions(__DIR__ . '/app/proxies');
+
+system('curl -s http://getcomposer.org/installer | php');
+system('php composer.phar install');
+
+system('sh bin/clone_module.sh CoreModule');
+system('sh bin/clone_module.sh PagesModule');
+system('sh bin/clone_module.sh NavigationModule');

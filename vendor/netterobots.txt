@@ -1,0 +1,5 @@
+Disallow: /doctrine/dbal/tests
+Disallow: /doctrine/common/tests
+Disallow: /doctrine/orm/tests
+Disallow: /nette/nette/tests
+Disallow: /venne/venne/tests
