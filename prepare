@@ -24,7 +24,3 @@ permissions(__DIR__ . '/app/proxies');
 
 system('curl -s http://getcomposer.org/installer | php');
 system('php composer.phar install');
-
-system('sh bin/clone_module.sh CoreModule');
-system('sh bin/clone_module.sh PagesModule');
-system('sh bin/clone_module.sh NavigationModule');

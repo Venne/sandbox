@@ -1,6 +1,9 @@
 {
 	"require": {
 		"php" : ">=5.3.2",
-		"venne/cms" : "dev-master"
+		"venne/cms" : "dev-master",
+		"venne/core-module" : "dev-master",
+		"venne/pages-module" : "dev-master",
+		"venne/navigation-module" : "dev-master"
 	}
 } 
