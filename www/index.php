@@ -2,15 +2,14 @@
 
 // uncomment this line if you must temporarily take down your site for maintenance
 // require '.maintenance.php';
-
 // load Venne:CMS
-require_once __DIR__ . '/../vendor/nette/nette/Nette/loader.php';
 require_once __DIR__ . '/../vendor/venne/cms/Venne/loader.php';
 
-\Nette\Diagnostics\Debugger::enable(\Nette\Diagnostics\Debugger::DEVELOPMENT);
+// load settings
+$settings = require_once __DIR__ . '/../app/config/settings.php';
 
-$configurator = new \Venne\Config\Configurator();
+// create and run application
+$configurator = new \Venne\Config\Configurator($settings);
 $configurator->enableDebugger();
 $configurator->enableLoader();
-$container = $configurator->getContainer();
-$container->application->run();
+$configurator->getContainer()->application->run();

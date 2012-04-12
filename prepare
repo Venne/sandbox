@@ -12,10 +12,12 @@ function permissions($dir)
 	}
 }
 
-permissions(__DIR__ . '/flags');
-permissions(__DIR__ . '/log');
-permissions(__DIR__ . '/temp');
-permissions(__DIR__ . '/data');
+permissions(__DIR__ . '/app/flags');
+permissions(__DIR__ . '/app/log');
+permissions(__DIR__ . '/app/temp');
+permissions(__DIR__ . '/app/temp/sessions');
+permissions(__DIR__ . '/app/temp/cache');
+permissions(__DIR__ . '/app/data');
 permissions(__DIR__ . '/www/public');
 permissions(__DIR__ . '/www/cache');
 permissions(__DIR__ . '/www/resources');
