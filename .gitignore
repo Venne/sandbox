@@ -2,3 +2,4 @@ nbproject/*
 .idea
 
 
+/www/vendor/.composer/
