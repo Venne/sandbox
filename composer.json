@@ -1,88 +1,11 @@
 {
-	"repositories": {
-		"framework": {
-			"type": "package",
-			"package": {
-				"name": "venne/framework",
-				"version": "dev-master",
-				"source": {
-					"url": "ssh://server.josef-kriz.cz/git/venne/framework",
-					"type": "git",
-					"reference": "origin/master"
-				}
-			}
-		},
-		"core": {
-			"type": "package",
-			"package": {
-				"name": "venne/core",
-				"version": "dev-master",
-				"source": {
-					"url": "ssh://server.josef-kriz.cz/git/venne/core",
-					"type": "git",
-					"reference": "origin/master"
-				}
-			}
-		},
-		"doctrine": {
-			"type": "package",
-			"package": {
-				"name": "venne/doctrine",
-				"version": "dev-master",
-				"source": {
-					"url": "ssh://server.josef-kriz.cz/git/venne/doctrine",
-					"type": "git",
-					"reference": "origin/master"
-				}
-			}
-		},
-		"forms": {
-			"type": "package",
-			"package": {
-				"name": "venne/forms",
-				"version": "dev-master",
-				"source": {
-					"url": "ssh://server.josef-kriz.cz/git/venne/forms",
-					"type": "git",
-					"reference": "origin/master"
-				}
-			}
-		},
-		"assets": {
-			"type": "package",
-			"package": {
-				"name": "venne/assets",
-				"version": "dev-master",
-				"source": {
-					"url": "ssh://server.josef-kriz.cz/git/venne/assets",
-					"type": "git",
-					"reference": "origin/master"
-				}
-			}
-		},
-		"pages": {
-			"type": "package",
-			"package": {
-				"name": "venne/pages",
-				"version": "dev-master",
-				"source": {
-					"url": "ssh://server.josef-kriz.cz/git/venne/pages",
-					"type": "git",
-					"reference": "origin/master"
-				}
-			}
+	"repositories": [
+		{ 
+			"type": "composer", "url": "http://repository.server.josef-kriz.cz/"
 		}
-    },
+    ],
 	"require": {
 		"php" : ">=5.3.2",
-		"venne/doctrine" : "dev-master",
-		"venne/assets" : "dev-master",
-		"venne/forms" : "dev-master",
-		"venne/framework" : "*",
-		"venne/core" : "dev-master",
-		"venne/pages" : "dev-master",
-		"nette/nette" : "2.0.*",
-		"doctrine/orm" : "2.2.*",
-		"symfony/console" : "2.0.*"
+		"venne/core-module" : "dev-master"
 	}
 } 
