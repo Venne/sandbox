@@ -3,26 +3,29 @@
 
 function permissions($dir)
 {
-	umask(0000);
-	if (!is_dir($dir)) {
-		@mkdir($dir, 0777, TRUE);
-
-	} else {
-		@chmod($dir, 0777);
-	}
+	system("chmod -R 0777 {$dir}");
 }
 
-permissions(__DIR__ . '/app/flags');
-permissions(__DIR__ . '/app/log');
-permissions(__DIR__ . '/app/temp');
-permissions(__DIR__ . '/app/temp/sessions');
-permissions(__DIR__ . '/app/temp/cache');
-permissions(__DIR__ . '/app/data');
+function isCurlInstalled()
+{
+	return (bool)system('
+			if which curl >/dev/null; then
+				echo 1
+			else
+				echo 0
+			fi'
+	);
+}
+
 permissions(__DIR__ . '/www/public');
 permissions(__DIR__ . '/www/cache');
 permissions(__DIR__ . '/www/resources');
-permissions(__DIR__ . '/app/config');
-permissions(__DIR__ . '/app/proxies');
+permissions(__DIR__ . '/app');
 
-system('curl -s http://getcomposer.org/installer | php');
+if(isCurlInstalled()){
+	system('curl -s http://getcomposer.org/installer | php');
+}else{
+	eval('?>'.file_get_contents('http://getcomposer.org/installer'));
+}
+
 system('php composer.phar install');
