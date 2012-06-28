@@ -6,6 +6,6 @@
     ],
 	"require": {
 		"php" : ">=5.3.2",
-		"venne/core-module" : "dev-master"
+		"venne/framework" : "dev-master"
 	}
 } 
