@@ -2,7 +2,10 @@
 	"repositories": [
 		{ 
 			"type": "composer", "url": "http://repository.server.josef-kriz.cz/"
-		}
+		},
+		{
+            "packagist": false
+        }
     ],
 	"require": {
 		"php" : ">=5.3.2",
