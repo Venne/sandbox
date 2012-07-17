@@ -9,6 +9,7 @@
     ],
 	"require": {
 		"php" : ">=5.3.2",
-		"venne/framework" : "dev-master"
-	}
+		"venne/framework" : "2.0.x-dev"
+	},
+	"minimum-stability": "dev"
 } 
