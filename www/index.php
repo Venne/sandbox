@@ -3,7 +3,7 @@
 // uncomment this line if you must temporarily take down your site for maintenance
 // require '.maintenance.php';
 // load Venne:CMS
-require_once __DIR__ . '/../vendor/venne/framework/Venne/loader.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 \Nette\Diagnostics\Debugger::enable(\Nette\Diagnostics\Debugger::DEVELOPMENT);
 
@@ -13,8 +13,6 @@ foreach (array("settings.php", "config.neon", 'modules.neon') as $config) {
 		copy(__DIR__ . '/../app/config/' . $config . '.orig', __DIR__ . '/../app/config/' . $config);
 	}
 }
-
-\Nette\Diagnostics\Debugger::enable(\Nette\Diagnostics\Debugger::DEVELOPMENT);
 
 // load settings
 $settings = require __DIR__ . '/../app/config/settings.php';
