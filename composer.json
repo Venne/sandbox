@@ -4,7 +4,11 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://repository.server.josef-kriz.cz/"
+            "url": "http://repository.server.josef-kriz.cz/3rdParty"
+        },
+        {
+            "type": "composer",
+            "url": "http://repository.server.josef-kriz.cz/venne"
         },
         {
             "packagist": false
