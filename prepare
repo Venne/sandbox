@@ -3,7 +3,7 @@
 
 function permissions($dir)
 {
-	system("chmod -R 0777 {$dir}");
+	system("chmod -R 0777 \"{$dir}\"");
 }
 
 function isCurlInstalled()
