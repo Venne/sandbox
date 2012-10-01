@@ -1,22 +1,9 @@
 {
 	"name": "venne/sandbox",
 	"description": "The sandbox is a pre-packaged Venne project, basic configured structure for your application.",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://repository.server.josef-kriz.cz/3rdParty"
-        },
-        {
-            "type": "composer",
-            "url": "http://repository.server.josef-kriz.cz/venne"
-        },
-        {
-            "packagist": false
-        }
-    ],
-    "require": {
-        "php": ">=5.3.2",
-        "venne/framework": "2.0.x-dev"
-    },
-    "minimum-stability": "dev"
+	"require": {
+		"php": ">=5.3.2",
+		"venne/framework": "2.0.x-dev"
+	},
+	"minimum-stability": "dev"
 }
