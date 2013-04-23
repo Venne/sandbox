@@ -1,5 +1,10 @@
 nbproject/*
 .idea
 
+app/log/*
+app/temp/*
+vendor/*
 
-/www/vendor/.composer/
+!.gitignore
+!.htaccess
+!web.config
