@@ -1,4 +1,0 @@
-Disallow: /autoload.php
-Disallow: /composer/autoload_classmap.php
-Disallow: /composer/autoload_namespace.php
-Disallow: /composer/ClassLoader.php

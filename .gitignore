@@ -1,5 +1,8 @@
-nbproject/*
-.idea
+app/log/*
+app/temp/*
+www/cache/*
 
-
-/www/vendor/.composer/
+!app/temp/cache/.gitignore
+!app/temp/sessions/.gitignore
+!app/temp/proxies/.gitignore
+!www/cache/.gitignore
