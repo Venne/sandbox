@@ -1,7 +1,11 @@
 app/log/*
 app/temp/*
+!app/temp/*/
+app/temp/*/*
 www/cache/*
 
+!app/temp/.*
+!app/temp/web.config
 !app/temp/cache/.gitignore
 !app/temp/sessions/.gitignore
 !app/temp/proxies/.gitignore
