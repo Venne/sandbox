@@ -1,13 +1,16 @@
 {
 	"name": "venne/sandbox",
 	"description": "The sandbox is a pre-packaged Venne project, basic configured structure for your application.",
+	"homepage": "http://venne.cz",
+	"type": "project",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 	"require": {
-		"php": ">=5.3.2",
-		"venne/framework": "2.0.x-dev"
+		"php": ">=5.3.13",
+		"venne/framework": "2.0.*@dev"
 	},
 	"extra":{
 		"branch-alias":{
-			"dev-master":"2.0.x-dev"
+			"dev-master":"2.0-dev"
 		}
 	},
 	"minimum-stability": "dev"
