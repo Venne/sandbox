@@ -6,6 +6,7 @@
 	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 	"require": {
 		"php": ">=5.3.13",
+		"dg/adminer-custom": "v1.1.0",
 		"venne/framework": "2.0.*@dev"
 	},
 	"extra":{
